@@ -5,15 +5,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}"/>
     <title>Home</title>
     <div class="post-contianer">
-        {% for post in posts %}
+        {% for post in posts %}            
             <div class="post">
-                <div class="post__title">
-                    {{post.title}} - {{post.user}}
-                </div>
-                <div class="post__content">
-                    {{post.content}}
-                </div>        
-            </div>
+                 <a href="/post/{{post.id}}" class="post-link">
+                    <div class="post__title">
+                        {{post.title}} - {{post.user}}
+                    </div>
+                    <div class="post__content">
+                        {{post.content}}
+                    </div> 
+                  </a>
+            </div>            
         {% endfor %}
     </div>
 {% endblock %}

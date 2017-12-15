@@ -3,5 +3,11 @@
 {% block content %}
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'post-detail.css' %}"/>
-
+    {% include "header.html" %}
+    <div class="post__detail">
+        <div class="post-title">
+            {{post.title}} - {{post.user}}
+        </div>
+        <div class="post-content">{{post.content}}</div>
+    </div>
 {% endblock %}
